@@ -1,0 +1,2 @@
+email = "admin@colegio.com",
+password_plain = "admin123"

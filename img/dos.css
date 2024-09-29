@@ -1,0 +1,509 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 202, 202);
+    color: #e2c3c3;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: rgba(234, 212, 212, 0.8); 
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 120px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav .nav-links li {
+    position: relative;
+}
+
+/* Cambiar el color de los enlaces del menú a rojo fuerte */
+nav .nav-links a {
+    color: #f56666; /* Rojo fuerte */
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    background-color: #f56d6d; /* Rojo más oscuro para el hover */
+    border-radius: 5px;
+}
+
+/* Contenedor para el botón "Haz tu Pedido" y los íconos sociales */
+.cta-and-social {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el botón y los íconos sociales */
+}
+
+/* Cambiar el color del botón "Haz tu Pedido" a rojo */
+.cta {
+    background-color: #ec6666; /* Rojo fuerte */
+    color: #f88e8e;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #f05f5f; /* Rojo más oscuro para el hover */
+}
+
+.social-icons a {
+    color: #f76363;
+    margin-left: 10px; /* Espacio entre los íconos */
+}
+
+/* Estilos para el menú desplegable */
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(236, 94, 94); /* Color café transparente */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-width: 200px;
+}
+
+nav .dropdown-content li {
+    width: 100%;
+}
+
+nav .dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+nav .dropdown-content a:hover {
+    background-color: #f65e5e;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Estilos del slider automático */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    height: 980px; /* Ajusta la altura según tus necesidades */
+    margin-top: 20px; /* Para ajustarse debajo del header fijo */
+}
+
+.slider ul {
+    display: flex;
+    width: 300%; /* 4 imágenes, cada una ocupa 100% */
+    animation: cambio 20s infinite alternate linear;
+    margin: 0;
+    padding: 0;
+}
+
+.slider li {
+    width: 100%; /* Cada imagen ocupa el 100% del ancho del slider */
+    list-style: none;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes cambio {
+    0% { margin-left: 0%; }
+    20% { margin-left: 0%; }
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+    75% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
+
+.contenido {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    gap: 30px;
+    height: fit-content;
+}
+
+.contenido .img {
+    width: 50%;
+    height: 330px;
+}
+
+.contenido .img iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.contenido h1 {
+    padding: 20px 0;
+}
+
+.contenido .text {
+    width: 30%;
+    font: 18px Arial, Helvetica, sans-serif;
+    padding: 10px;
+    top: 10px;
+}
+
+.contenido li {
+    width: 100%;
+    text-align: right;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.contenido li a {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+    box-shadow: 0 20px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contenido2 {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    height: 200px;
+}
+
+.contenido2 .servicios {
+    width: 30%;
+    height: 100%;
+}
+
+div#menu {
+    width: 200px;
+    margin-top: 50px;
+}
+
+div#menu ul li {
+    margin-top: 15px;
+    font-family: tahoma;
+    font-size: 18px;
+    background-color: #ef6060;
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px 20px 20px 0px;
+    padding-left: 10px;
+    box-shadow: 5px 0px 10px #ec7474;
+    -webkit-transition: padding-left 0.6s;
+}
+
+div#menu ul li:hover {
+    padding: 15px;
+}
+
+.contenido2 .lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.contenido2 .lista li {
+    border-bottom: 1px solid #f0e5e5;
+    width: 90%;
+    padding: 10px;
+}
+
+.contenido2 .lista li a {
+    margin-left: 10px;
+}
+
+.contenido2 .blog {
+    width: 50%;
+    text-align: justify;
+}
+
+.contenido2 .ultimos {
+    width: 30%;
+    text-align: justify;
+}
+
+.contenido2 h2 {
+    border-bottom: 2px solid black;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.up {
+    text-transform: uppercase;
+    color: #666;
+    padding: 0 0 13px 0;
+}
+
+.btn {
+    margin-top: 70px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.btn .btn-d {
+    width: 30%;
+}
+
+.btn .btn-m {
+    width: 40%;
+}
+
+.btn li {
+    width: 100%;
+    text-align: right;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.btn li a {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    box-shadow: 0 20px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar-bot {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #b83e3e;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav-bar-bot li {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.nav-bar-bot li a {
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    height: 60%;
+    transition-duration: 0.5s;
+}
+
+.footer {
+    display: flex;
+    width: 50%;
+    background-color: hsl(0, 88%, 70%);
+    color: rgb(244, 103, 103);
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.footer a {
+    color: rgb(234, 88, 88);
+}
+
+.imgs {
+    display: flex;
+}
+
+.nav-bar-bot li a:hover {
+    font-size: 15px;
+    color: #ed7b7b;
+}
+
+.li-iz li a:hover, .li-der li a:hover {
+    font-size: 15px;
+    background-image: url(imagenes/icono-menu.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 20px;
+}
+
+.contenido2 .lista li a:hover {
+    color: rgb(232, 223, 223);
+}
+
+
+
+.nav-bar-bot1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #c11919;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav-bar-bot1 li {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+}
+
+.nav-bar-bot1 li a {
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    height: 60%;
+    transition-duration: 0.5s;
+}
+
+div#menu1 {
+    background-color: #c31a1a;
+}
+
+div#menu1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+div#menu1 ul li {
+    position: relative;
+}
+
+div#menu1 ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: rgb(206, 27, 27);
+    text-decoration: none;
+}
+
+div#menu1 ul li:hover {
+    background-color: #b11a1a;
+}
+
+div#menu1 ul ul {
+    display: none;
+    position: absolute;
+    background-color: #c31e1e;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+}
+
+div#menu1 ul ul li {
+    width: 200px;
+}
+
+div#menu1 ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+div#menu1 ul li:hover > ul {
+    display: block;
+}
+
+div#menu1 ul ul li a {
+    padding: 10px 20px;
+    border-bottom: 1px solid #e99c9c;
+}
+
+div#menu1 ul ul li a:hover {
+    background-color: #f46f6f;
+}
+
+.hola ,h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
+
+
+
+
+
+
+.news-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.news-section h1 {
+    color: #121010;
+    margin-bottom: 20px;
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.news-item {
+    background: #c7bdbd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.news-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.news-item h2 {
+    color: #000000;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.news-item p {
+    color: #ebdbdb;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.news-item a {
+    color: #ebdfdf;
+    text-decoration: none;
+}
+
+.news-item .date {
+    display: block;
+    color: #fefcfc;
+    font-size: 0.85em;
+    margin-top: 10px;
+}
