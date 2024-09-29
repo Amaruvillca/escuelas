@@ -116,7 +116,7 @@ select * from nota;
 SELECT a.id AS id_asignatura, a.nombre AS nombre_asignatura, a.descripcion AS descripcion_asignatura
 FROM Asignatura a
 JOIN Usuario u ON a.id_usuario = u.id
-WHERE u.id = 4; -- Reemplaza ? con el ID del usuario que deseas consultar
+WHERE u.id = 4; 
 
 
 
