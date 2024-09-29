@@ -5,5 +5,6 @@ function conectarDb():mysqli{
         echo "error no se pudo conectar";
         exit;
     }
+    
     return $db;
 }
