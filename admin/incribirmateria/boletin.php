@@ -36,7 +36,7 @@ $pdf->SetFont('Arial', 'B', 16);
 
 $pdf->Image('../../img/logo.png', 10, 10, 30); // Logo del colegio
 $pdf->Cell(40); // Margen para el logo
-$pdf->Cell(200, 10, 'Boletín de Notas - Colegio Ejemplar', 0, 1, 'C');
+$pdf->Cell(200, 10, 'Boletín de Notas - 20 de octubre II', 0, 1, 'C');
 $pdf->SetFont('Arial', '', 12);
 $pdf->Cell(280, 10, 'Año Escolar 2023 - 2024', 0, 1, 'C');
 
@@ -62,10 +62,11 @@ $pdf->Ln(10);
 $pdf->SetFillColor(230, 230, 230); 
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->Cell(90, 10, 'Clase', 1, 0, 'C', true);
-$pdf->Cell(30, 10, 'Nota 1', 1, 0, 'C', true);
-$pdf->Cell(30, 10, 'Nota 2', 1, 0, 'C', true);
-$pdf->Cell(30, 10, 'Nota 3', 1, 0, 'C', true);
-$pdf->Cell(30, 10, 'Nota 4', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Bimestre 1', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Bimestre 2', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Bimestre 3', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Bimestre 4', 1, 0, 'C', true);
+$pdf->Cell(30, 10, 'Promedio', 1, 0, 'C', true);
 $pdf->Cell(30, 10, 'Estado', 1, 0, 'C', true);
 $pdf->Ln();
 
@@ -73,13 +74,24 @@ $pdf->Ln();
 $pdf->SetFont('Arial', '', 12);
 $fill = false;
 $result->data_seek(0); 
+$promedio=0;
+$mensaje="aprobado";
 while ($row = $result->fetch_assoc()) {
     $pdf->Cell(90, 10, $row['asignatura'], 1, 0, 'L', $fill);
     $pdf->Cell(30, 10, $row['nota'] ? $row['nota'] : 'N/A', 1, 0, 'C', $fill); // Nota 1
+    $promedio=$promedio+$row['nota'];
     $pdf->Cell(30, 10, $row['nota'] ? $row['nota'] : 'N/A', 1, 0, 'C', $fill); // Nota 2
+    $promedio=$promedio+$row['nota'];
     $pdf->Cell(30, 10, $row['nota'] ? $row['nota'] : 'N/A', 1, 0, 'C', $fill); // Nota 3
+    $promedio=$promedio+$row['nota'];
     $pdf->Cell(30, 10, $row['nota'] ? $row['nota'] : 'N/A', 1, 0, 'C', $fill); // Nota 4
-    $pdf->Cell(30, 10, $row['nota'] ? $row['nota'] : 'N/A', 1, 0, 'C', $fill); // Nota 4
+    $promedio=$promedio+$row['nota'];
+    $promedio=$promedio/4;
+    $pdf->Cell(30, 10, $promedio?? 'N/A', 1, 0, 'C', $fill); // Nota 4
+    if($promedio<=61){$mensaje="aprobado";}else{
+        $mensaje="reprobado";
+    }
+    $pdf->Cell(30, 10, $mensaje?? 'N/A', 1, 0, 'C', $fill); 
     $pdf->Ln();
     $fill = !$fill; 
 }
