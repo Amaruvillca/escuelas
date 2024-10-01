@@ -34,6 +34,10 @@ $result = $stmt->get_result();
     <div class="btn-container">
         <a href="/escuela/admin/materias/inscribir_materia.php?id_alumno=<?php echo $id_alumno; ?>&id_grado=<?php echo $id_grado; ?>" class="btn btn-success">Inscribir Materia</a>
     </div>
+    <br>
+    <div class="btn-container">
+        <a href="boletin.php?id_alumno=<?php echo $id_alumno; ?>&id_grado=<?php echo $id_grado; ?>" class="btn btn-success">Imprimir boletin </a>
+    </div>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>
